@@ -1,0 +1,30 @@
+//Importar o express e o cors.
+
+const express = require('express');
+const cors = require('cors');
+const app = express();
+ 
+app.use(cors());
+app.use(express.json());
+app.listen(3333);
+
+app.get('/user', function (req, res) {
+  res.send('Lista de nomes');
+});
+ 
+app.post('/user', function (req, res) {
+  res.send('Inserir um nome');
+});
+ 
+app.put('/user/:id', function (req, res) {
+  res.send(`Editar um nome com o id ${req.params.id}`);
+});
+ 
+app.delete('/user/:id', function (req, res) {
+  res.send(`Excluir um nome com o id ${req.params.id}`);
+});
+  
+app.listen(3333);
+  console.log(`App rodando no endereço http://localhost:3333`)
+});
+  
